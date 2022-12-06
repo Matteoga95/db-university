@@ -183,3 +183,15 @@ WHERE departments.`name` LIKE "%matematica%";
 ```
 
 
+
+BONUS: Selezionare per ogni studente quanti tentativi d’esame ha sostenuto per superare ciascuno dei suoi esami
+
+```sql
+SELECT  exam_student.exam_id as "id esame", exam_student.student_id as "id studente" , COUNT(exam_student.exam_id) as "Tentativi appello"
+FROM exam_student
+JOIN students ON exam_student.student_id = students.id
+JOIN exams ON exam_student.exam_id = exams.id
+
+GROUP BY   exam_student.exam_id, exam_student.student_id;
+
+```
