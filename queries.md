@@ -187,7 +187,7 @@ WHERE departments.`name` LIKE "%matematica%";
 BONUS: Selezionare per ogni studente quanti tentativi d’esame ha sostenuto per superare ciascuno dei suoi esami
 
 ```sql
-SELECT students.surname, students.`name`, courses.`name` as "Nome cosros d'esame", COUNT(exams.id) as "Tentativi appello"
+SELECT students.surname, students.`name`, courses.`name` as "Nome corso d'esame", COUNT(exams.id) as "Tentativi appello"
 FROM exams
 join exam_student ON exam_student.exam_id = exams.id
 JOIN students ON exam_student.student_id = students.id
